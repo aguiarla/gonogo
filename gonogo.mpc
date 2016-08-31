@@ -128,7 +128,6 @@ DISKVARS = A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
 \ *******************************************************************
 \ Enter procedure below; Experimental state sets 1-17 available
 
-\List I=2.0,2.2,2.4,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4
 List I=1,1,2,2
 
 s.s.1,
@@ -148,12 +147,12 @@ s.s.1,
 	
 	s4,	\ while the lever is down
 		#R^L_Press: Set D(0) = BTIME;							  		  \Checking if the lever is still pressed
-		IF (D(0)-D(1) >= E(2)) [@startTrial, @Ignore]					  \Testing if the prime time was reached
-			@startTrial: IF ( L = 1) [@GoTrial, @NoGoTrial]			  \Testing if the trial is go or nogo
-							@GoTrial  : ON^R_Light; Z^OnR_Light; --->s5					  			
-							@NoGoTrial:	ON^HouseLight; Z^OnHouseLight; --->s7		
-			@Ignore:	--->s4											  \If not, that time is not saved
-		0": 			--->s3							  				  \When the Left Lever is released before initial delay, the program goes back to detect the next press
+		IF (D(0)-D(1) >= E(1)) [@startTrial, @Ignore]			\Testing if the prime time was reached
+			@startTrial: IF ( L = 1) [@GoTrial, @NoGoTrial]		\Testing if the trial is go or nogo
+				@GoTrial  : ON^R_Light; Z^OnR_Light; 	   --->s5					  			
+				@NoGoTrial: ON^HouseLight; Z^OnHouseLight; --->s7		
+			@Ignore: --->s4											  \If not, that time is not saved
+		0": --->s3							  				  \When the Left Lever is released before initial delay, the program goes back to detect the next press
 
 
 	s5, \ GO trial
