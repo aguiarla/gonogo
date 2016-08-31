@@ -1,14 +1,10 @@
 \ nogo.mpc - based on go.mpc and previously on DRRD_V6.mpc
 \
-\ Created by:        Marcelo S. Caetano / Marcelo B. Reyes / Diego H. Miranda
-\ Created on:        Sep 17, 2013
-\ Last modified by:  Diego Miranda
-\ Last modified on:  Sep 27, 2013 
-\ Modification:      The maximum prime time is now 1200 msec. Once this value is reached, the prime time will not change anymore.
-\
-\ Experiment:        Differential Reinforcement of Response Duration (DRRD)
-\ Duration:          60 minutes
-\ Number of cycles:  TBD
+\ Created by:        Marcelo S. Caetano / Marcelo B. Reyes
+\ Created on:        Ago 31, 2016
+\ Experiment:        Go No-go Experiment
+\ Duration:          50 minutes
+\ Number of cycles:  Behavior-dependent
 \
 \ Comments:          TBD
 \
@@ -30,22 +26,22 @@
 						\ON             OFF
 ^L_Light=1				\11 (.011)      21 (.021)
 ^R_Light=2				\12 (.012)      22 (.022)
-^HouseLight=5           \15 (.015)      25 (.025)
-^Food=6                 \16 (.016)      26 (.026)
-^Phase_change=7			\17 (.017)		27 (.027)	On means the prime was increased by ^Increment and Off means the prime was decrease by ^Increment
+^HouseLight=5           		\15 (.015)      25 (.025)
+^Food=6                 		\16 (.016)      26 (.026)
+^Phase_change=7				\17 (.017)	27 (.027)	On means the prime was increased by ^Increment and Off means the prime was decrease by ^Increment
 ^Prime = 8
 \^Spare=10
 
-^FailGo = 3				\13 (.013) time when the rat failed the Go trial
+^FailGo = 3			\13 (.013) time when the rat failed the Go trial
 ^SuccessNoGo = 4		\14 (.014) time when the nogo trial wait period was reached
 
 
 \ Z Pulse constants; output off and on states
 ^OnL_Light 		= 1
 ^OnR_Light 		= 2
-^OnHouseLight 	= 3
+^OnHouseLight 		= 3
 ^OnFood 		= 4
-^OnPhase_change = 5
+^OnPhase_change 	= 5
 ^OnPrime 		= 6
 
 ^OnFailGo   	= 7 			\ detects when fail in a GO trial
@@ -60,7 +56,7 @@
 ^STORE = 1000           \ divide by ^STORE to place event code in .xxx
 ^ON = 10                \ add ^ON
 ^OFF = 20               \ add ^OFF
-^STATE = 29				\ Add 29 so that codes for states start at 50
+^STATE = 29		\ Add 29 so that codes for states start at 50
 
 
 
