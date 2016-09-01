@@ -169,7 +169,7 @@ s.s.1,
 		IF (D(0)-D(1) >= E(3)+E(1)) and (H=0)  [@SaveSuccessNOGO, @Ignore]	\Testing if the wait time was reached
 			@SaveSuccessNOGO: z^OnSuccessNoGo; set H=1 --->s7				\If yes, that time is saved
 			@Ignore: --->s7												  	\If not, that time is not saved
-		0": Set D(2) = BTIME; Off^HouseLight; Z^OffHouseLight; 
+		0": Set D(2) = BTIME; Off^HouseLight; Z^OffHouseLight; Set H = 0;
 		IF (D(2)-D(1) <= E(3)+E(1)) [@ignore, @Food]	  \Testing if the prime time was reached
 			@ignore: Add F(1); Set F(0)=0; --->s3	
 			@Food: 	 Add F(0); Set F(1)=0; --->s8				
