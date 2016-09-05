@@ -64,7 +64,7 @@ clf; hold on;
 %plot(D(validPrimed,1)   ,validPrimed,   'ko','markersize',4, 'markerfacecolor','k');
 plot(D(reinfGoTrials,1)     ,reinfGoTrials,     'ko','markersize',4, 'markerfacecolor','k');
 plot(D(nonReinfGoTrials,1)  ,nonReinfGoTrials,  'ko','markersize',4, 'markerfacecolor','w');
-plot(D(reinfNoGoTrials,1)   ,reinfNoGoTrials,   'mo','markersize',4, 'markerfacecolor','k');
+plot(D(reinfNoGoTrials,1)   ,reinfNoGoTrials,   'mo','markersize',4, 'markerfacecolor','m');
 plot(D(nonReinfNoGoTrials,1),nonReinfNoGoTrials,'mo','markersize',4, 'markerfacecolor','w');
 
 %plot(D(validNonPrimed,1),validNonPrimed,'ko','markersize',5, 'markerfacecolor','w','linewidth',1);
@@ -85,7 +85,7 @@ else
 end
 title(title_label,'fontsize',14);
 set(gca,'box','on','fontsize',12);
-legend({'einfGo','nonReinfGo','reinfNoGo','nonReinfNoGo','invalid'});
+legend({'reinfGo','nonReinfGo','reinfNoGo','nonReinfNoGo','invalid'});
 
 
 % --- printing the lines dividing the sessions ---
