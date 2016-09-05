@@ -1,3 +1,2 @@
 # gonogo
-Go/NoGo tasks programmed in medPC
-We also included other files that are important for data analysis
+Go/NoGo tasks programmed in medPC for data acquisition, in Matlab for data analysis.
