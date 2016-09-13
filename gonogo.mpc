@@ -160,7 +160,7 @@ s.s.1,
 		
 	s6,	\ continuation of go trial - deciding if recieves food or not
 		0": IF D(2)-D(1) <= E(2)+E(1) [@Food, @NoFood]  										 			\Testing if the time between the press and release is equal or above the current prime time
-				@Food:   Add F(0); Set F(1)=0;  --->s8 					 					 				\If yes, the variable which counts the correct answers is increased in 1 unit
+				@Food:   Add F(0); Set F(1)=0;  --->s10 					 					 				\If yes, the variable which counts the correct answers is increased in 1 unit
 				@NoFood: Add F(1); Set F(0)=0;  --->s3		\If not, the variable which counts the correct answers is set to 0 and the timeout interval is set
 			
 
@@ -178,7 +178,14 @@ s.s.1,
 		0": On^Food; z^OnFood; --->s9				 	\Sugar pellet delivery - ON	  
 		
 	s9,
-		0.1": Off^Food; z^OffFood; --->s3			 	\Sugar pellet delivery - OFF	 
+		0.1": Off^Food; z^OffFood; --->s10			 	\Sugar pellet delivery - OFF	 
+		
+	s10,
+		0": On^Food; z^OnFood; --->s11				 	\Sugar pellet delivery - ON	  
+		
+	s11,
+		0.1": Off^Food; z^OffFood; --->s3			 	\Sugar pellet delivery - OFF	
+		
 	
 \	s9,
 \		0": IF E(1)>=^InitialPrime*0.001"*12 [@freeze_prime, @continue] 	\Testing if the prime has reached 500 msec 
