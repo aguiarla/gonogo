@@ -181,10 +181,10 @@ s.s.1,
 		0.1": Off^Food; z^OffFood; --->s10			 	\Sugar pellet delivery - OFF	 
 		
 	s10,
-		0": On^Food; z^OnFood; --->s11				 	\Sugar pellet delivery - ON	  
+		0.2": On^Food; z^OnFood; --->s11				 	\Sugar pellet delivery - ON	  
 		
 	s11,
-		0.1": Off^Food; z^OffFood; --->s3			 	\Sugar pellet delivery - OFF	
+		0.3": Off^Food; z^OffFood; --->s3			 	\Sugar pellet delivery - OFF	
 		
 	
 \	s9,
